@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily Journal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  
+  <div class="container">
+    <button class="top-left-button" id="show-quote-btn" type="button">Inspire Me</button>
+    <header>
+      <h1>Daily Journal</h1>
+      <p style="color:#4a5a7a; margin-bottom: 24px;">Reflect on your day, track your mood, and stay inspired.</p>
+    </header>
+
+    <section>
+      <h2>Add New Entry</h2>
+      <form id="entry-form" autocomplete="off">
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <input type="date" id="date" required style="flex:1; min-width: 120px;" />
+          <input type="text" id="mood" placeholder="How do you feel today?" required style="flex:1; min-width: 200px;" />
+        </div>
+        <textarea id="entry" rows="4" placeholder="Write your thoughts..." required></textarea>
+        <button type="submit">Add Entry</button>
+      </form>
+    </section>
+    
+    <section>
+      <h2>Filter Entries by Date</h2>
+      <form id="filter-form" style="display:flex; gap:12px; align-items:center;">
+        <input type="date" id="filter-date" required style="flex:1; min-width: 120px;" />
+        <button type="submit" style="flex:0;">Filter</button>
+        <button type="button" id="clear-filter" style="flex:0; background:#e3e8f0; color:#2a3b5d;">Show All</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Journal Entries</h2>
+      <div id="entries-container"></div>
+    </section>
+  </div>
+
+  <!-- Quote Popup -->
+  <div class="popup hidden" id="quote-popup">
+    <div class="popup-content">
+      <h2>Daily Inspiration</h2>
+      <p id="quote-text" style="font-style:italic; margin: 16px 0;"></p>
+      <button id="close-popup">Close</button>
+    </div>
+  </div>
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
