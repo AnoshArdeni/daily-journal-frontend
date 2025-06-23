@@ -37,7 +37,7 @@ document.getElementById("filter-form").addEventListener("submit", function (e) {
     return;
   }
   // Fetch entries for the selected date
-  fetch(`http://127.0.0.1:5000/api/journal/${selectedDate}`)
+  fetch(`https://daily-journal-backend-0lcn.onrender.com/api/journal/${selectedDate}`)
     .then(res => {
       if (!res.ok) throw new Error("No entry found for that date.");
 
@@ -69,7 +69,7 @@ document.getElementById("filter-form").addEventListener("submit", function (e) {
 
   // Function to fetch a random quote from the API
   function fetchQuote() {
-    fetch("http://127.0.0.1:5000/api/quote")
+    fetch("https://daily-journal-backend-0lcn.onrender.com/api/quote")
     .then(res => res.json())
     .then(data => {
       const quote = data.quote;
@@ -86,7 +86,7 @@ document.getElementById("filter-form").addEventListener("submit", function (e) {
 // Function to fetch all journal entries
 // This will be called on page load and after adding/deleting entries
 function fetchEntries() {
-  fetch("http://127.0.0.1:5000/api/journal")
+  fetch("https://daily-journal-backend-0lcn.onrender.com/api/journal")
     .then(res => res.json())
     .then(entries => {
       const container = document.getElementById("entries-container");
@@ -124,7 +124,7 @@ function fetchEntries() {
 
 // Function to delete an entry by ID
 function deleteEntry(id) {
-  fetch(`http://127.0.0.1:5000/api/journal/${id}`, {
+  fetch(`https://daily-journal-backend-0lcn.onrender.com/api/journal/${id}`, {
     method: "DELETE"
   })
     .then(res => {
@@ -152,7 +152,7 @@ function addEntry() {
     return;
   }
 
-  fetch("http://127.0.0.1:5000/api/journal", {
+  fetch("https://daily-journal-backend-0lcn.onrender.com/api/journal", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
